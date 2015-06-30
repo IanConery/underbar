@@ -111,6 +111,8 @@
   };
 
 
+
+
   // Return the results of applying an iterator to each element.
   _.map = function(collection, iterator) {
     // map() is a useful primitive iteration function that works a lot
@@ -318,7 +320,7 @@
   _.memoize = function(func) {
       var cached = {}
       
-      var memoizer = function(){
+      return function(){
         var key = arguments[0];
         if(cached.hasOwnProperty(key)){
           return cached[key];
@@ -328,8 +330,6 @@
           return result;
         }
       };
-      
-      return memoizer;
   };
 
   // Delays a function for the given number of milliseconds, and then calls
